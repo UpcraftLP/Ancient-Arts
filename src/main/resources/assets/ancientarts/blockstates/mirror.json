@@ -1,0 +1,23 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "ancientarts:mirror",
+		"textures": {
+			"particle": "ancientarts:blocks/mirror_base"
+		},
+		"transform": "forge:default-block"
+    },
+	"variants": {
+		"half": {
+			"upper": { "model": "ancientarts:empty" },
+			"lower": {}
+		},
+		"facing": {
+			"north": { "y": 90 },
+			"south": { "y": 270 },
+			"east": {"y": 180 },
+			"west": {}
+		},
+		"inventory": [{}]
+    }
+}
