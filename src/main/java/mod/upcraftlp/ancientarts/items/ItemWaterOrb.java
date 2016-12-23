@@ -1,18 +1,17 @@
 package mod.upcraftlp.ancientarts.items;
 
-import core.upcraftlp.craftdev.API.templates.Item;
+import mod.upcraftlp.ancientarts.items.util.ItemOrb;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ItemWaterOrb extends Item {
+public class ItemWaterOrb extends ItemOrb {
 
 	public static int MAX_AIR  = 300;
 	
 	public ItemWaterOrb() {
-		super("water_orb");
-		this.setMaxStackSize(1);
+		super("water");
 		this.setMaxDamage(512);
 	}
 	

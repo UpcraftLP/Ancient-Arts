@@ -1,0 +1,22 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "leaves",
+		"textures": {
+			"particle": "ancientarts:blocks/deadwood_leaves",
+			"all": "ancientarts:blocks/deadwood_leaves"
+		},
+		"transform": "forge:default-block"
+    },
+	"variants": {
+		"check_decay": {
+			"true": { },
+			"false": { }
+		},
+		"decayable": {
+			"true": { },
+			"false": { }
+		},
+		"inventory": [{}]
+    }
+}

@@ -1,0 +1,22 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cross",
+		"textures": {
+			"particle": "ancientarts:blocks/deadwood_sapling",
+			"cross": "ancientarts:blocks/deadwood_sapling"
+		},
+		"transform": "forge:default-block"
+    },
+	"variants": {
+		"stage": {
+			"0": { },
+			"1": { }
+		},	
+		"inventory": [{ 
+			"model": "builtin/generated",
+			"transform": "forge:default-item",
+			"textures": { "layer0": "ancientarts:blocks/deadwood_sapling"}
+		}]
+    }
+}

@@ -25,8 +25,7 @@ public class WorldProviderDream extends WorldProviderSurface {
 	
 	@Override
 	public BiomeProvider getBiomeProvider() {
-		// TODO Custom BiomeProvider
-		return super.getBiomeProvider();
+		return new BiomeProviderDream();
 	}
 	
 }

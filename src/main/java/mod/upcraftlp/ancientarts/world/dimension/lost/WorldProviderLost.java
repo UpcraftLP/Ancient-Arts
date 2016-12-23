@@ -84,10 +84,12 @@ public class WorldProviderLost extends WorldProvider {
 	
 	@Override
 	protected void generateLightBrightnessTable() {
-		 for (int i = 0; i <= 14; ++i)
+		 for (int i = 0; i <= 12; ++i)
 	     {
 	         this.lightBrightnessTable[i] = 0.0F;
 	     }
+		 this.lightBrightnessTable[13] = 1.0f;
+		 this.lightBrightnessTable[14] = 1.0f;
 		 this.lightBrightnessTable[15] = 1.0f;
 	}
 	

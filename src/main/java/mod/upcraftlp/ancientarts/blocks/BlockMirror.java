@@ -15,8 +15,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTUtil;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -25,7 +24,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.common.DimensionManager;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 
 public class BlockMirror extends Block {
 
@@ -72,18 +71,15 @@ public class BlockMirror extends Block {
 		
 	@Override
 	public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn) {
-		if(entityIn == null || entityIn.isDead) return;
+		if(entityIn == null || entityIn.isDead || worldIn.isRemote) return;
 		if(entityIn.isRiding()) entityIn.getRidingEntity().dismountRidingEntity();
 		if(entityIn.isBeingRidden()) entityIn.dismountRidingEntity();
 		if(entityIn instanceof EntityPlayerMP) {
 			EntityPlayerMP player = (EntityPlayerMP) entityIn;
 				int dimID = AncientConfig.dimIdLost;
-				if(player.dimension == AncientConfig.dimIdLost) dimID = 0; //TODO: get last dim!
-				
-				NBTTagCompound nbt = new NBTTagCompound();
-				nbt.setTag("pos", NBTUtil.createPosTag(player.getPosition()));
-				nbt.setInteger("dim", player.dimension);
-				player.getServer().getPlayerList().transferPlayerToDimension(player, dimID, new DimTeleporterLost(DimensionManager.getWorld(dimID)));
+				if(player.dimension == AncientConfig.dimIdLost) dimID = 0;
+				MinecraftServer server = FMLCommonHandler.instance().getMinecraftServerInstance();
+				server.getPlayerList().transferPlayerToDimension(player, dimID, new DimTeleporterLost(server.worldServerForDimension(dimID)));
 		}
 	}
 	

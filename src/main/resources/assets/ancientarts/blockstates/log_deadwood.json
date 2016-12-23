@@ -1,0 +1,21 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cube_column",
+		"textures": {
+			"particle": "ancientarts:blocks/deadwood_log_side",
+			"end": "ancientarts:blocks/deadwood_log_top",
+			"side": "ancientarts:blocks/deadwood_log_side"
+		},
+		"transform": "forge:default-block"
+    },
+	"variants": {
+		"axis": {
+			"y": { },
+			"z": { "x": 90 },
+			"x": { "x": 90, "y": 90 },
+			"none": { "model": "cube_all", "textures": {"all": "ancientarts:blocks/deadwood_log_side"} }
+		},	
+		"inventory": [{}]
+    }
+}
