@@ -4,7 +4,7 @@ import mod.upcraftlp.ancientarts.items.util.ItemOrb;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntityLargeFireball;
+import net.minecraft.entity.projectile.EntityFireball;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;
@@ -49,7 +49,7 @@ public class ItemFireOrb extends ItemOrb {
 		ItemStack stack = playerIn.getHeldItem(handIn);
 		if(!worldIn.isRemote) {
 			Vec3d lookVec = playerIn.getLookVec();
-			EntityLargeFireball fireBall = new EntityLargeFireball(worldIn, playerIn, lookVec.xCoord, lookVec.yCoord, lookVec.zCoord) {
+			EntityFireball fireBall = new EntityFireball(worldIn, playerIn, lookVec.xCoord, lookVec.yCoord, lookVec.zCoord) {
 				
 				@Override
 				protected void onImpact(RayTraceResult result) {
