@@ -1,6 +1,7 @@
 package mod.upcraftlp.ancientarts.proxy;
 
 import core.upcraftlp.craftdev.API.common.ModRegistry;
+import mod.upcraftlp.ancientarts.asm.HoeExchangeHelper;
 import mod.upcraftlp.ancientarts.init.AncientBlocks;
 import mod.upcraftlp.ancientarts.init.AncientConfig;
 import mod.upcraftlp.ancientarts.init.AncientDimensions;
@@ -24,7 +25,7 @@ public class CommonProxy {
 	}
 	
 	public void init(FMLInitializationEvent event) {
-		
+		HoeExchangeHelper.init();
 	}
 
 	public void postInit(FMLPostInitializationEvent event) {

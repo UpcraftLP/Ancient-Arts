@@ -14,8 +14,8 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void preInit(FMLPreInitializationEvent event) {
 		super.preInit(event);
-//		LuckyBlocks.registerRenders();
 		ModRegistry.registerBlockRenders(AncientBlocks.blockMap);
+		AncientItems.postInit();
 		ModRegistry.registerItemRenders(AncientItems.itemMap);
 		AncientTabs.setIcons();
 		//FIXME Check for offline player and crash!
